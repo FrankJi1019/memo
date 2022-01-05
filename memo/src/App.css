@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  transition: all .2s;
+}
+
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
+
+.ov {
+  overflow: hidden;
+}
+
+.App {
+  margin: 0 auto;
+  width: 1200px;
+  overflow: hidden;
+}
+
+body {
+  background-color: #f1f1f1;
+}
+
+/**** Header ****/
+.header {
+  padding: 10px 20px;
+  border-bottom: 2px solid #000;
+  margin-bottom: 20px;
+}
+
+.header .logo {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.header .greeting {
+  line-height: 40px;
+  font-size: 20px;
+}
+
+
+/**** Memos ****/
+.memos-when-adding {
+  float: left;
+}
+
+.memos-when-adding .single-memo {
+  width: 400px;
+  margin-left: 20px;
+}
+
+.single-memo {
+  width: 600px;
+  margin: 20px auto;
+  padding: 10px 20px;
+  /* border: 1px solid black; */
+  box-shadow: 0px 0px 10px 1.9px rgba(0, 0, 0, .2);
+  border-radius: 5px;
+}
+
+.single-memo:hover {
+  box-shadow: 0px 0px 10px 1.9px rgba(0, 0, 0, .4);
+}
+
+.single-memo .memo-title {
+  font-size: 25px;
+}
+
+.main-section .no-memo {
+  padding-top: 50px;
+  text-align: center;
+  color: grey;
+}
+
+/***** Add-new button *****/
+.add-new {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 39px;
+  font-size: 45px;
+  font-weight: 500;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  user-select: none;
+  cursor: pointer;
+}
+
+.add-new:hover {
+  background-color: #f1f1f1;
+  color: black;
+  box-shadow: 0px 0px 10px 1.9px rgba(0, 0, 0, .2);
+}
+
+/**** Memo editor ****/
+.memo-editor {
+  width: 620px;
+  border: 1px solid black;
+  margin-top: 20px;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.memo-editor .title {
+  margin: 10px;
+  padding: 5px 10px;
+  padding-bottom: 2px;
+  width: 560px;
+  font-size: 20px;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #000;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+.memo-editor .content {
+  margin: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 560px;
+  height: 300px;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  outline: none;
+  resize: none;
+  background-color: #f1f1f1;
+}
+
+.memo-editor .btn {
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  border: 1px solid black;
+}
+
+.memo-editor .btn:hover {
+  color: #f1f1f1;
+  background-color: #777;
+  border-color: #777;
+}
+
+/**** log in ****/
+.login {
+  width: 1200px;
+  margin-top: 70px;
+  text-align: center;
+}
+
+.login .title {
+  margin-bottom: 50px;
+  font-size: 50px;
+}
+
+.login label {
+  font-size: 20px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.login label.show-password {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+.login #show-password:checked {
+  color: #333;
+}
+
+.login input {
+  padding: 0 5px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  background-color: #f1f1f1;
+}
+
+.login .wrapper {
+  margin-bottom: 30px;
+}
+
+.login .login-btn {
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.login .btn {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 3px 0;
+  width: 200px;
+  font-size: 18px;
+  border: 1px solid black;
+}
+
+.login .btn:hover {
+  color: #f1f1f1;
+  background-color: #777;
+  border-color: #777;
+}
+
+.login .warning {
+  color: red;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+.login .warning {
+  margin-top: 20px;
+}
