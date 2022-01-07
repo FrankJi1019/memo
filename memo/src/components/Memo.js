@@ -10,6 +10,18 @@ class Memo extends React.Component {
         this.props.viewContent(this.props.memo._id)
     }
 
+    deleteMemo = e => {
+        e.stopPropagation()
+        fetch('http://localhost:9000/memo', {
+            method: 'DELETE',
+            body: JSON.stringify({
+                id: this.props.memo._id
+            })
+        }).then(() => {
+            this.props.update()
+        })
+    }
+
     render() {
         return (
             <div className="single-memo ov" onClick={this.viewThisContent}>
@@ -22,6 +34,7 @@ class Memo extends React.Component {
                 {
                     this.props.showContent ? (<div className="memo-content">{this.props.memo.content}</div>) : null
                 }
+                <div className="delete" onClick={this.deleteMemo}>x</div>
             </div>
         )
     }

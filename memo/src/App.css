@@ -1,8 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  user-select: none;
-  transition: all .2s;
+  user-select: none; 
 }
 
 .fr {
@@ -56,12 +55,14 @@ body {
 }
 
 .single-memo {
+  position: relative;
   width: 600px;
   margin: 20px auto;
   padding: 10px 20px;
   /* border: 1px solid black; */
   box-shadow: 0px 0px 10px 1.9px rgba(0, 0, 0, .2);
   border-radius: 5px;
+  transition: box-shadow .2s;
 }
 
 .single-memo:hover {
@@ -70,6 +71,21 @@ body {
 
 .single-memo .memo-title {
   font-size: 25px;
+}
+
+.single-memo .memo-date {
+  padding-right: 20px;
+}
+
+.single-memo .delete {
+  position: absolute;
+  top: 0px;
+  right: 7px;
+  color: grey;
+}
+
+.single-memo .delete:hover {
+  color: red;
 }
 
 .main-section .no-memo {
@@ -94,6 +110,7 @@ body {
   border-radius: 50%;
   user-select: none;
   cursor: pointer;
+  transition: all .2s;
 }
 
 .add-new:hover {
@@ -146,6 +163,7 @@ body {
   margin-left: 20px;
   margin-bottom: 20px;
   border: 1px solid black;
+  transition: all .2s;
 }
 
 .memo-editor .btn:hover {
@@ -206,6 +224,7 @@ body {
   width: 200px;
   font-size: 18px;
   border: 1px solid black;
+  transition: all .2s;
 }
 
 .login .btn:hover {

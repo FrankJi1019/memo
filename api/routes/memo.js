@@ -34,4 +34,20 @@ router.get('/:username', (req, res) => {
     })
 })
 
+router.delete('/', (req, res) => {
+    let data = ''
+    req.on('data', chuck => {
+        data += chuck
+    })
+    req.on('end', () => {
+        data = JSON.parse(data)
+        Memo.findByIdAndDelete(data.id)
+        .then(() => {
+            res.json({
+                result: true
+            })
+        })
+    })
+})
+
 module.exports = router

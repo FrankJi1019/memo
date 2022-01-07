@@ -36,27 +36,7 @@ class Main extends React.Component {
         })
     }
 
-    render() {
-        return (
-            <div className="Main">
-                <Header username={this.props.username} />
-                <div className="main-section ov">
-                    <div className={this.state.adding ? "memos memos-when-adding" : "memos"}>
-                        {
-                            this.state.memos.map(memo => (
-                                <Memo key={memo._id} memo={memo} viewContent={this.viewContent} showContent={memo._id === this.state.viewMemoId} />
-                            ))
-                        }
-                    </div>
-                    {this.state.memos.length===0 && !this.state.adding ? <div className="no-memo">There is no memo yet</div> : null}
-                    {this.state.adding ? <MemoEditor setMemos={this.setMemos} cancelAddingMemo={this.cancelAddingMemo} username={this.props.username} /> : null}
-                </div>
-                {this.state.adding ? null : <div className="add-new" onClick={this.showMemoEditor}>+</div>}
-            </div>
-        )
-    }
-
-    componentDidMount() {
+    fetchMemo = () => {
         fetch(`http://localhost:9000/memo/${this.props.username}`, {
             method: 'GET',
         }).then(res => {
@@ -71,6 +51,31 @@ class Main extends React.Component {
                 memos
             })
         })
+    }
+
+    render() {
+        return (
+            <div className="Main">
+                <Header username={this.props.username} />
+                <div className="main-section ov">
+                    <div className={this.state.adding ? "memos memos-when-adding" : "memos"}>
+                        {
+                            this.state.memos.map(memo => (
+                                <Memo key={memo._id} memo={memo} viewContent={this.viewContent} showContent={memo._id === this.state.viewMemoId} 
+                                    update={this.fetchMemo} />
+                            ))
+                        }
+                    </div>
+                    {this.state.memos.length===0 && !this.state.adding ? <div className="no-memo">There is no memo yet</div> : null}
+                    {this.state.adding ? <MemoEditor setMemos={this.setMemos} cancelAddingMemo={this.cancelAddingMemo} username={this.props.username} /> : null}
+                </div>
+                {this.state.adding ? null : <div className="add-new" onClick={this.showMemoEditor}>+</div>}
+            </div>
+        )
+    }
+
+    componentDidMount() {
+        this.fetchMemo()
     }
 
 }
